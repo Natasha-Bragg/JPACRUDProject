@@ -20,7 +20,7 @@ class AvengersTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("MusicPU");
+		emf = Persistence.createEntityManagerFactory("AvengersPU");
 	}
 
 	@AfterAll
@@ -41,10 +41,19 @@ class AvengersTest {
 	}
 
 	@Test
-	void test_Music_entity_mapping() {
+	void test_Avenger_entity_mapping() {
 		assertNotNull(avengers);
-		assertEquals("Michael",	avengers.getName());
+		assertEquals("Tony",	avengers.getFirstName());
+		assertEquals("Stark",	avengers.getLastName());
+		assertEquals("Iron Man",	avengers.getSuperheroName());
+		assertEquals("Genius level intellect Proficient scientist and engineer Highly skilled martial artist and hand-to-hand combatant Powered armor suit: Superhuman strength and durability (when using his armor) Supersonic flight Energy repulsor and missile projection Regenerative life support",	avengers.getPowers());
+		assertEquals(11,	avengers.getNumberOfMovies());
+		assertEquals(null,	avengers.getFunFacts());
+		assertEquals(1,	avengers.getAvengerRank());
+		assertEquals("ENTP",	avengers.getMyersBriggsType());
+		assertEquals("\"I love you 3000.\" “Genius, billionaire, playboy philanthropist”",	avengers.getQuote());
 		
 	}
+
 
 }
